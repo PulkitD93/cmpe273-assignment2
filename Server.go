@@ -363,10 +363,10 @@ func getDatabaseURL() string {
 
 func main() {
 	mux := httprouter.New()
-	mux.GET("/locationdb/:location_id", getLocation)
-	mux.POST("/locationdb", createLocation)
-	mux.PUT("/locationdb/:location_id", putLocation)
-	mux.DELETE("/locationdb/:location_id", deleteLocation)
+	mux.GET("/locations/:location_id", getLocation)
+	mux.POST("/locations", createLocation)
+	mux.PUT("/locations/:location_id", putLocation)
+	mux.DELETE("/locations/:location_id", deleteLocation)
 	server := http.Server{
 		Addr:    "0.0.0.0:8080",
 		Handler: mux,
